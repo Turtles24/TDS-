@@ -1,146 +1,30 @@
-.storybook-button {
-  display: inline-block;
-  cursor: pointer;
-  border: 0;
-  border-radius: 3em;
-  font-weight: 700;
-  line-height: 1;
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-.storybook-button--primary {
-  background-color: #1ea7fd;
-  color: white;
-}
-.storybook-button--secondary {
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
-  background-color: transparent;
-  color: #333;
-}
-.storybook-button--small {
-  padding: 10px 16px;
-  font-size: 12px;
-}
-.storybook-button--medium {
-  padding: 11px 20px;
-  font-size: 14px;
-}
-.storybook-button--large {
-  padding: 12px 24px;
-  font-size: 16px;
-}
-
 /* font.css */
 
 .font {
-  color: #000; /* Default text color */
-  font-family: "Pretendard Variable", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #000;
+  font-family: "Pretendard Variable";
   font-style: normal;
   line-height: normal;
-  margin: 0;
 }
+/* Title Variants */
+.font--Title--1 { font-size: 40px; font-weight: 600; letter-spacing: -1px; }
+.font--Title--2 { font-size: 36px; font-weight: 600; letter-spacing: -1px; }
+.font--Title--3 { font-size: 32px; font-weight: 600; letter-spacing: -1px; }
+.font--Title--4 { font-size: 24px; font-weight: 600; letter-spacing: -1px; }
+.font--Title--5 { font-size: 20px; font-weight: 600; letter-spacing: -1px; }
+.font--Title--6 { font-size: 16px; font-weight: 600; letter-spacing: -1px; }
 
-/* Title styles */
-.font--title-1 {
-  font-size: 40px;
-  font-weight: 600;
-  letter-spacing: -2px;
-}
+/* Body Variants */
+.font--Body--1 { font-size: 16px; font-weight: 700; letter-spacing: -0.8px; }
+.font--Body--2 { font-size: 16px; font-weight: 600; letter-spacing: -0.8px; }
+.font--Body--3 { font-size: 16px; font-weight: 400; letter-spacing: -0.8px; }
+.font--Body--4 { font-size: 14px; font-weight: 700; letter-spacing: -0.7px; }
+.font--Body--5 { font-size: 14px; font-weight: 600; letter-spacing: -0.7px; }
+.font--Body--6 { font-size: 14px; font-weight: 400; letter-spacing: -0.7px; }
 
-.font--title-2 {
-  font-size: 36px;
-  font-weight: 600;
-  letter-spacing: -1.8px;
-}
-
-.font--title-3 {
-  font-size: 32px;
-  font-weight: 600;
-  letter-spacing: -1.6px;
-}
-
-.font--title-4 {
-  font-size: 24px;
-  font-weight: 600;
-  letter-spacing: -1.2px;
-}
-
-.font--title-5 {
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: -1px;
-}
-
-.font--title-6 {
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: -1px;
-}
-
-/* Body styles */
-.font--body-1 {
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: -0.8px;
-}
-
-.font--body-2 {
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: -0.8px;
-}
-
-.font--body-3 {
-  font-size: 16px;
-  font-weight: 400;
-  letter-spacing: -0.8px;
-}
-
-.font--body-4 {
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: -0.7px;
-}
-
-.font--body-5 {
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: -0.7px;
-}
-
-.font--body-6 {
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: -0.7px;
-}
-
-/* Caption styles */
-.font--caption-1 {
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: normal;
-}
-
-.font--caption-2 {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: -0.6px;
-}
-
-.font--caption-3 {
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: -0.6px;
-}
-
-.font--caption-4 {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: -0.5px;
-}
-
-.font--caption-5 {
-  font-size: 10px;
-  font-weight: 400;
-  letter-spacing: -0.5px;
-}
-
+/* Caption Variants */
+.font--Caption--1 { font-size: 14px; font-weight: 700; letter-spacing: -0.7px; }
+.font--Caption--2 { font-size: 12px; font-weight: 700; letter-spacing: -0.6px; }
+.font--Caption--3 { font-size: 12px; font-weight: 400; letter-spacing: -0.6px; }
+.font--Caption--4 { font-size: 10px; font-weight: 700; letter-spacing: -0.5px; }
+.font--Caption--5 { font-size: 10px; font-weight: 400; letter-spacing: -0.5px; }

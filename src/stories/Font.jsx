@@ -4,17 +4,15 @@ import PropTypes from 'prop-types';
 import './font.css';
 
 /** Font component for displaying styled text */
-export const Font = ({ variant, content }) => {
-  return <p className={`font font--${variant}`}>{content}</p>;
+export const Font = ({ variant, type, content }) => {
+  return <p className={`font font--${variant}--${type}`}>{content}</p>;
 };
 
 Font.propTypes = {
   /** Variant of the text (title, caption, body) */
-  variant: PropTypes.oneOf([
-    'title-1', 'title-2', 'title-3', 'title-4', 'title-5', 'title-6',
-    'body-1', 'body-2', 'body-3', 'body-4', 'body-5', 'body-6',
-    'caption-1', 'caption-2', 'caption-3', 'caption-4', 'caption-5',
-  ]).isRequired,
+  variant: PropTypes.oneOf(['Title', 'Body', 'Caption']).isRequired,
+  /** Type of the variant */
+  type: PropTypes.oneOf(['1', '2', '3', '4', '5', '6']).isRequired,
   /** Text content */
   content: PropTypes.string.isRequired,
 };
