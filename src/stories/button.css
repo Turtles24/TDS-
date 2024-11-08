@@ -1,4 +1,4 @@
-.storybook-button {
+.button {
   display: inline-block;
   cursor: pointer;
   border: 0;
@@ -7,24 +7,45 @@
   line-height: 1;
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-.storybook-button--primary {
-  background-color: #1ea7fd;
+
+.button--primary {
+  background-color: #6888FF;
   color: white;
+  transition: background-color 0.3s ease;
 }
-.storybook-button--secondary {
+
+.button--secondary {
   box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
   background-color: transparent;
   color: #333;
+  border: 1px solid #6888FF;
+  transition: border 0.3s ease;
 }
-.storybook-button--small {
-  padding: 10px 16px;
+
+.button--small {
+  padding: 13px 22px;
   font-size: 12px;
 }
-.storybook-button--medium {
-  padding: 11px 20px;
+
+.button--medium {
+  padding: 14px 24px;
+  font-size: 13px;
+}
+
+.button--large {
+  padding: 18px 29px;
   font-size: 14px;
 }
-.storybook-button--large {
-  padding: 12px 24px;
-  font-size: 16px;
+
+.button--xl {
+  padding: 18px 41px;
+  font-size: 15px;
+}
+
+.button--primary:hover {
+  background-color: #CBD5F8;
+}
+
+.button--secondary:hover {
+  border: 1px solid #CBD5F8;
 }
