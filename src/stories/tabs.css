@@ -1,0 +1,55 @@
+/* tabs.css */
+
+.tabs {
+  display: flex;
+}
+
+.tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none; /* Remove border */
+  background: none;
+  font-weight: bold;
+  color: #000000;
+}
+
+/* Rectangular Variant */
+.tabs--rectangular .tab {
+  background-color: #fff;
+}
+
+.tabs--rectangular .tab--active {
+  background-color: #6888FF; /* New active background color */
+  color: #fff;
+}
+
+/* Underline Variant */
+.tabs--underline .tab {
+  position: relative;
+}
+
+.tabs--underline .tab--active {
+  color: #6888FF;
+}
+
+.tabs--underline .tab--active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: #6888FF;
+}
+
+/* Rounded Variant */
+.tabs--rounded .tab {
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  margin: 0 5px;
+}
+
+.tabs--rounded .tab--active {
+  background-color: #6888FF; /* New active background color */
+  color: #fff;
+}
