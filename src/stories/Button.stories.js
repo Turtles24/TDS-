@@ -1,43 +1,63 @@
 import { fn } from '@storybook/test';
-
 import { Button } from './Button';
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
+// Storybook 기본 설정
 export default {
   title: 'Components/Button',
   component: Button,
   parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',
   },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
-  // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
     backgroundColor: { control: 'color' },
+    type: {
+      control: { type: 'select' },
+      options: ['primary', 'secondary', 'kakao'],
+    },
+    size: {
+      control: { type: 'select' },
+      options: ['small', 'medium', 'large', 'xl'],
+    },
   },
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: { onClick: fn() },
 };
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+// Primary 버튼 스토리
 export const Primary = {
   args: {
-    primary: true,
+    type: 'primary',
     label: 'BUTTON',
   },
 };
 
+// Secondary 버튼 스토리
 export const Secondary = {
   args: {
+    type: 'secondary',
     label: 'BUTTON',
   },
 };
 
+// Kakao 버튼 스토리
+export const Kakao = {
+  args:{
+    type:'kakao',
+    label:'Kakao',
+    
+  },
+};
+export const Google = {
+  args:{
+    type: 'google',
+    label : 'Google',
+  },
+};
+// 사이즈별 버튼 스토리
 export const XL = {
   args: {
-    size : 'xl',
-    label : 'BUTTON',
+    size: 'xl',
+    label: 'BUTTON',
   },
 };
 
@@ -48,9 +68,9 @@ export const Large = {
   },
 };
 
-export const medium = {
+export const Medium = {
   args: {
-    size : 'medium',
+    size: 'medium',
     label: 'BUTTON',
   },
 };
@@ -61,4 +81,3 @@ export const Small = {
     label: 'BUTTON',
   },
 };
-
