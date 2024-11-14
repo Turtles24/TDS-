@@ -13,7 +13,7 @@ export const Button = ({ type, backgroundColor, size, label, ...props }) => {
     google: 'button--google',
   };
 
-  const mode = buttonTypes[type] || 'button--primary';
+  const mode = type === 'primary' ? 'button--primary' : buttonTypes[type] || 'button--primary';
 
   // 버튼 내용 조건부 렌더링
   const renderButtonContent = () => {

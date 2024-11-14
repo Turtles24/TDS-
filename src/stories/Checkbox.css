@@ -1,0 +1,73 @@
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select:none;
+  }
+  
+
+
+  input[type="checkbox"] {
+    display: none;
+  }
+  
+  /* 공통 체크박스 스타일 */
+  .checkmark {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    position: relative;
+    border: 2px solid #ccc;
+  }
+  .checkmark:focus {
+    outline: none; /* 체크박스 클릭 시 포커스 없애기 */
+  }
+  
+  .checkbox-container:focus-within {
+    outline: none; /* 전체 체크박스 컨테이너 포커스 없애기 */
+  }
+  
+  .checkmark::after {
+    content: '✓';
+    display: none;
+    font-size: 16px;
+    color: white;
+  }
+  
+  /* 체크되었을 때의 스타일 */
+  .checkbox-container.checked .checkmark {
+    background-color: #8aff98; /* 체크 시 초록색 */
+    border-color: transparent; /* 테두리 제거 */
+  }
+  
+  .checkbox-container.checked .checkmark::after {
+    display: block;
+  }
+  
+  /* 원형 체크박스 스타일 */
+  .checkbox-container.circle .checkmark {
+    border-radius: 50%;
+  }
+  
+  /* 사각형 체크박스 스타일 */
+  .checkbox-container.square .checkmark {
+    border-radius: 4px;
+  }
+  
+  /* 레이블 텍스트 스타일 */
+  .label-text {
+    font-size: 16px;
+    font-weight: normal;
+    color: #333;
+    margin-left: 4px;
+    user-select: none;
+    transition: all 0.2s ease;
+  }
+  .label-checked {
+    font-size: 16px; /* 체크되었을 때 폰트 크기 변경 */
+    font-weight: bold; /* 체크되었을 때 폰트 굵기 변경 */
+  }

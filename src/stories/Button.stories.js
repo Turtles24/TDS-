@@ -13,7 +13,7 @@ export default {
     backgroundColor: { control: 'color' },
     type: {
       control: { type: 'select' },
-      options: ['primary', 'secondary', 'kakao'],
+      options: ['primary', 'secondary', 'kakao','google'],
     },
     size: {
       control: { type: 'select' },
@@ -50,7 +50,7 @@ export const Kakao = {
 export const Google = {
   args:{
     type: 'google',
-    label : 'Google',
+    label : 'Google', 
   },
 };
 // 사이즈별 버튼 스토리
