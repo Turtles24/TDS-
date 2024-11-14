@@ -1,0 +1,93 @@
+button {
+    cursor: pointer;
+    user-select: none; /* 사용자가 텍스트를 선택할 수 없도록 설정 */
+    outline: none; /* 버튼 클릭 시 외곽선 제거 */
+    -webkit-appearance: none; /* 브라우저 기본 스타일 제거 */
+    -moz-appearance: none; /* 파이어폭스 기본 스타일 제거 */
+    appearance: none; /* 모든 브라우저 기본 스타일 제거 */
+  }
+  
+  button:focus {
+    outline: none; /* 포커스 시에도 외곽선 제거 */
+  }
+  
+  button::selection {
+    background: none; /* 버튼 텍스트 선택 배경 제거 */
+  }
+  /*버튼에 나타나는 텍스트 입력 효과를 없애기 위해서 추가한 CSS들*/
+  .button--primary {
+    display: inline-block;
+    cursor: pointer;
+    border: 0;
+    border-radius: 3em;
+    font-weight: 700;
+    line-height: 1;
+    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #6888FF;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button--secondary {
+    display: inline-block;
+    cursor: pointer;
+    border: 0;
+    border-radius: 3em;
+    font-weight: 700;
+    line-height: 1;
+    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+    background-color: transparent;
+    color: #333;
+    border: 1px solid #6888FF;
+    transition: border 0.3s ease;
+  }
+  
+  .button--small {
+    padding: 13px 24px;
+    font-size: 12px;
+  }
+  
+  .button--medium {
+    padding: 14px 26px;
+    font-size: 13px;
+  }
+  
+  .button--large {
+    padding: 18px 31px;
+    font-size: 14px;
+  }
+  
+  .button--xl {
+    padding: 18px 41px;
+    font-size: 15px;
+  }
+  
+  .button--primary:hover {
+    background-color: #CBD5F8;
+  }
+  
+  .button--secondary:hover {
+    border: 1px solid #CBD5F8;
+  }
+  
+  .button--kakao {
+    border: none;
+    padding: 0;
+    border-radius: 8px;
+    cursor:pointer;
+  }
+  .button--kakao:hover{
+    filter:brightness(0.92);
+  }
+  
+  .button--google{
+    border: none;
+    padding: 0;
+    border-radius: 8px;
+    cursor:pointer;
+  }
+  .button--google:hover{
+    filter:brightness(0.92);
+  }
+  
