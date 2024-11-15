@@ -1,40 +1,54 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
-
 import './button.css';
+import kakaologin from './assets/kakaologin.svg';
+import googlelogin from './assets/googlelogin.svg';
 
-/** Primary UI component for user interaction */
-export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+export const Button = ({ type, backgroundColor, size, label, ...props }) => {
+  // 버튼 유형에 따른 클래스 매핑
+  const buttonTypes = {
+    primary: 'button--primary',
+    secondary: 'button--secondary',
+    kakao: 'button--kakao',
+    google: 'button--google',
+  };
+
+  const mode = buttonTypes[type] || 'button--primary';
+
+  // 버튼 내용 조건부 렌더링
+  const renderButtonContent = () => {
+    if (type === 'kakao') {
+      return <img src={kakaologin} alt={label} style={{ width: '100%', height: 'auto' }} />;
+    } else if (type === 'google') {
+      return <img src={googlelogin} alt={label} style={{ width: '100%', height: 'auto' }} />;
+    } else {
+      return label;
+    }
+  };
+
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={backgroundColor && { backgroundColor }}
+      className={['button', `button--${size}`, mode].join(' ')}
+      style={backgroundColor ? { backgroundColor } : {}}
       {...props}
     >
-      {label}
+      {renderButtonContent()}
     </button>
   );
 };
 
 Button.propTypes = {
-  /** Is this the principal call to action on the page? */
-  primary: PropTypes.bool,
-  /** What background color to use */
+  type: PropTypes.oneOf(['primary', 'secondary', 'kakao', 'google']),
   backgroundColor: PropTypes.string,
-  /** How large should the button be? */
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
-  /** Button contents */
+  size: PropTypes.oneOf(['small', 'medium', 'large', 'xl']),
   label: PropTypes.string.isRequired,
-  /** Optional click handler */
   onClick: PropTypes.func,
 };
 
 Button.defaultProps = {
+  type: 'primary',
   backgroundColor: null,
-  primary: false,
   size: 'medium',
   onClick: undefined,
 };
