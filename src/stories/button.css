@@ -73,12 +73,14 @@ button::selection {
   border: 1px solid #CBD5F8;
 }
 
-.button--kakao {
+.button--kakao{
   border: none;
   padding: 0;
   border-radius: 8px;
   cursor:pointer;
 }
+
+
 .button--kakao:hover{
   filter:brightness(0.92);
 }
@@ -91,4 +93,22 @@ button::selection {
 }
 .button--google:hover{
   filter:brightness(0.92);
+}
+
+
+/* SVG 이미지 크기 조정 (size 별) */
+.button--small__icon {
+  width: 190px;
+}
+
+.button--medium__icon {
+  width: 220px;
+}
+
+.button--large__icon {
+  width: 280px;
+}
+
+.button--xl__icon {
+  width: 330px;
 }

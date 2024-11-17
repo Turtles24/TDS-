@@ -13,7 +13,7 @@ export default {
     backgroundColor: { control: 'color' },
     type: {
       control: { type: 'select' },
-      options: ['primary', 'secondary', 'kakao','google'],
+      options: ['primary', 'secondary', 'kakao', 'google'],
     },
     size: {
       control: { type: 'select' },
@@ -41,18 +41,20 @@ export const Secondary = {
 
 // Kakao 버튼 스토리
 export const Kakao = {
-  args:{
-    type:'kakao',
-    label:'Kakao',
-    
+  args: {
+    type: 'kakao',
+    label: 'Kakao',
   },
 };
+
+// Google 버튼 스토리
 export const Google = {
-  args:{
+  args: {
     type: 'google',
-    label : 'Google', 
+    label: 'Google',
   },
 };
+
 // 사이즈별 버튼 스토리
 export const XL = {
   args: {
@@ -81,3 +83,4 @@ export const Small = {
     label: 'BUTTON',
   },
 };
+
