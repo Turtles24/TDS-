@@ -44,6 +44,7 @@ export const Kakao = {
   args: {
     type: 'kakao',
     label: 'Kakao',
+    size: 'large',
   },
 };
 
@@ -52,6 +53,7 @@ export const Google = {
   args: {
     type: 'google',
     label: 'Google',
+    size: 'large',
   },
 };
 
