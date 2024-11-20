@@ -39,5 +39,5 @@ Header.propTypes = {
 Header.defaultProps = {
   onBack: false,
   onSearch: false,
-  title: '타이틀',
+  title: 'Turtles🐢',
 };

@@ -11,7 +11,7 @@ export default {
   args: {
     onBack: false,
     onSearch: false,
-    title: '타이틀',
+    title: 'Turtles',
   },
 };
 
@@ -19,7 +19,7 @@ export const TitleOnly = {
   args: {
     onBack: false,
     onSearch: false,
-    title: '타이틀',
+    title: 'Turtles🐢',
   },
 };
 
@@ -27,7 +27,7 @@ export const TitleWithBackButton = {
   args: {
     onBack: true,
     onSearch: false,
-    title: '타이틀',
+    title: 'Turtles🐢',
   },
 };
 
@@ -35,7 +35,7 @@ export const TitleWithSearchButton = {
   args: {
     onBack: false,
     onSearch: true,
-    title: '타이틀',
+    title: 'Turtles🐢',
   },
 };
 
@@ -43,6 +43,6 @@ export const OriginalHeader = {
   args: {
     onBack: true,
     onSearch: true,
-    title: '타이틀',
+    title: 'Turtles🐢',
   },
 };
