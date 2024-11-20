@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './header.css';
 import { ReactComponent as BackIcon } from './assets/Back.svg';
+import { ReactComponent as SearchIcon } from './assets/Search.svg';
 import { ReactComponent as CloseIcon } from './assets/Close.svg';
-
 
 export const Header = ({ onBack, onSearch, title }) => {
   const [isSearching, setIsSearching] = useState(false);
@@ -29,9 +29,11 @@ export const Header = ({ onBack, onSearch, title }) => {
     <header>
       <div className="storybook-header">
         <div className="left">
-          <button onClick={handleBackClick} className="back-button">
-            <BackIcon width="24" height="24" />
-          </button>
+          {onBack && (
+            <button onClick={handleBackClick} className="back-button">
+              <BackIcon width="24" height="24" />
+            </button>
+          )}
         </div>
 
         <div className="center">
@@ -60,7 +62,7 @@ export const Header = ({ onBack, onSearch, title }) => {
         <div className="right">
           {onSearch && !isSearching && (
             <button onClick={handleSearchClick} className="search-button">
-              <BackIcon width="24" height="24" />
+              <SearchIcon width="24" height="24" />
             </button>
           )}
         </div>
