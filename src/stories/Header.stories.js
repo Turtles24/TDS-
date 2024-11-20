@@ -10,8 +10,8 @@ export default {
   },
   args: {
     onBack: false,
-    onSearch: false,
-    title: 'Turtles',
+    onSearch: true,
+    title: 'Turtles🐢',
   },
 };
 
