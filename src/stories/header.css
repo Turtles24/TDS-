@@ -4,7 +4,7 @@
   align-items: center;
   padding: 10px;
   background-color: #f1f1f1;
-  height: 60px; /* 일반 헤더박스 높이 지정 */
+  height: 70px; /* 일반 헤더박스 높이 지정 */
   box-sizing: border-box; /* 패딩 포함 크기 조절 */
 }
 
@@ -58,17 +58,17 @@ button:focus {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 100%; /* 헤더 크기에 맞추기 */
-  max-width: 400px; /* 검색란 최대 크기 제한 */
-  height: 100%; /* 헤더 높이에 맞추기 */
+  width : 400px;
+  height: 100%;
+  margin-left: 20px;
   box-sizing: border-box;
 }
 
 .search-input {
   flex: 1;
-  padding: 10px 15px; /* 내부 패딩 조정 */
+  padding: 10px 15px;
   font-size: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid #838383;
   border-radius: 50px;
 }
 
@@ -81,7 +81,8 @@ button:focus {
   background: none;
   border: none;
   cursor: pointer;
-  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 8px;
   font-size: 1.5rem;
 }
 
