@@ -15,7 +15,11 @@ export const Header = ({ onBack, onSearch, title }) => {
 
   const handleBackClick = () => {
     setIsSearching(false);
-    setSearchQuery('');
+    setSearchQuery(''); // 검색 입력란 초기화
+  };
+
+  const handleClearSearch = () => {
+    setSearchQuery(''); // 입력된 문자열만 초기화
   };
 
   const handleSearchSubmit = (event) => {
@@ -48,7 +52,7 @@ export const Header = ({ onBack, onSearch, title }) => {
               />
               <button
                 type="button"
-                onClick={handleBackClick}
+                onClick={handleClearSearch} // Close 버튼에서 handleClearSearch 호출
                 className="close-button"
               >
                 <CloseIcon width="24" height="24" />
