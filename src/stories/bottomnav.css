@@ -16,32 +16,26 @@
     align-items: center;
     position: relative;
     cursor: pointer;
-    color: #aeaeb2; /* 비활성화 상태 */
-  }
-  
-  .nav-item.active {
-    color: #000000; /* 활성화 상태 */
   }
   
   .icon {
     width: 24px;
     height: 24px;
-    fill: currentColor; /* 부모 요소의 color를 따름 */
   }
   
   .nav-item span {
     font-size: 12px;
     margin-top: 4px;
+    color: inherit;
   }
   
-  /* 이동하는 막대 */
   .active-indicator {
     position: absolute;
     bottom: 0;
     height: 4px;
-    width: 33.33%; /* 한 아이콘의 크기와 동일 */
+    width: 33.33%;
     background-color: #000000;
     border-radius: 2px;
-    transition: left 0.3s ease; /* 부드러운 이동 애니메이션 */
+    transition: left 0.3s ease;
   }
   
