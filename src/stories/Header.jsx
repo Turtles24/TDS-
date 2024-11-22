@@ -8,14 +8,17 @@ import { ReactComponent as CloseIcon } from './assets/Close.svg';
 export const Header = ({ onBack, onSearch, title }) => {
   const [isSearching, setIsSearching] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [showBackButton, setShowBackButton] = useState(false);
 
   const handleSearchClick = () => {
     setIsSearching(true);
+    setShowBackButton(true); // 검색 아이콘 클릭 시 뒤로가기 버튼 표시
   };
 
   const handleBackClick = () => {
     setIsSearching(false);
-    setSearchQuery(''); // 검색 입력란 초기화
+    setShowBackButton(false); // 뒤로가기 버튼 클릭 시 원래 상태로 돌아감
+    setSearchQuery(''); // 검색 입력 초기화
   };
 
   const handleClearSearch = () => {
@@ -33,7 +36,7 @@ export const Header = ({ onBack, onSearch, title }) => {
     <header>
       <div className="storybook-header">
         <div className="left">
-          {onBack && (
+          {(onBack || showBackButton) && ( // onBack이 true이거나 showBackButton이 true이면 뒤로가기 버튼 보임
             <button onClick={handleBackClick} className="back-button">
               <BackIcon width="24" height="24" />
             </button>
@@ -64,7 +67,7 @@ export const Header = ({ onBack, onSearch, title }) => {
         </div>
 
         <div className="right">
-          {onSearch && !isSearching && (
+          {onSearch && !isSearching && ( // 검색 중일 때만 숨김
             <button onClick={handleSearchClick} className="search-button">
               <SearchIcon width="24" height="24" />
             </button>
@@ -82,7 +85,7 @@ Header.propTypes = {
 };
 
 Header.defaultProps = {
-  onBack: false,
-  onSearch: false,
+  onBack: true,
+  onSearch: true,
   title: 'Turtles🐢',
 };
