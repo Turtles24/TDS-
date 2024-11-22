@@ -1,0 +1,47 @@
+.bottom-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5;
+    height: 60px;
+    position: relative;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  .nav-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    color: #aeaeb2; /* 비활성화 상태 */
+  }
+  
+  .nav-item.active {
+    color: #000000; /* 활성화 상태 */
+  }
+  
+  .icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor; /* 부모 요소의 color를 따름 */
+  }
+  
+  .nav-item span {
+    font-size: 12px;
+    margin-top: 4px;
+  }
+  
+  /* 이동하는 막대 */
+  .active-indicator {
+    position: absolute;
+    bottom: 0;
+    height: 4px;
+    width: 33.33%; /* 한 아이콘의 크기와 동일 */
+    background-color: #000000;
+    border-radius: 2px;
+    transition: left 0.3s ease; /* 부드러운 이동 애니메이션 */
+  }
+  
