@@ -20,40 +20,29 @@ const BottomNav = () => {
     }
   };
 
-  const getIconColor = (tab) => (active === tab ? "#000000" : "#AEAEB2");
-
   return (
     <div className="bottom-nav">
-      <div
-        className="nav-item"
-        onClick={() => setActive("home")}
-      >
-        <HomeIcon
-          className="icon"
-          fill={getIconColor("home")} /* fill 속성 전달 */
-        />
-        <span style={{ color: getIconColor("home") }}>홈</span>
-      </div>
-      <div
-        className="nav-item"
-        onClick={() => setActive("chat")}
-      >
-        <ChatIcon
-          className="icon"
-          fill={getIconColor("chat")} /* fill 속성 전달 */
-        />
-        <span style={{ color: getIconColor("chat") }}>채팅</span>
-      </div>
-      <div
-        className="nav-item"
-        onClick={() => setActive("mypage")}
-      >
-        <MyPageIcon
-          className="icon"
-          fill={getIconColor("mypage")} /* fill 속성 전달 */
-        />
-        <span style={{ color: getIconColor("mypage") }}>마이페이지</span>
-      </div>
+ <div
+  className={`nav-item ${active === "home" ? "active" : ""}`}
+  onClick={() => setActive("home")}
+>
+  <HomeIcon className="icon" />
+  <span>홈</span>
+</div>
+<div
+  className={`nav-item ${active === "chat" ? "active" : ""}`}
+  onClick={() => setActive("chat")}
+>
+  <ChatIcon className="icon" />
+  <span>채팅</span>
+</div>
+<div
+  className={`nav-item ${active === "mypage" ? "active" : ""}`}
+  onClick={() => setActive("mypage")}
+>
+  <MyPageIcon className="icon" />
+  <span>마이페이지</span>
+</div>
       <div
         className="active-indicator"
         style={{
