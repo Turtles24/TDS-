@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './button.css';
-import { ReactComponent as KakaoIcon } from './assets/kakaologin.svg';
-import { ReactComponent as GoogleIcon } from './assets/googlelogin.svg';
+import kakaologin from './assets/kakaologin.svg';
+import googlelogin from './assets/googlelogin.svg';
 
 export const Button = ({ type, backgroundColor, size, label, ...props }) => {
   // 버튼 유형에 따른 클래스 매핑
@@ -13,23 +13,17 @@ export const Button = ({ type, backgroundColor, size, label, ...props }) => {
     google: 'button--google',
   };
 
-  const mode = type === 'primary' ? 'button--primary' : buttonTypes[type] || 'button--primary';
+  const mode = buttonTypes[type] || 'button--primary';
 
   // 버튼 내용 조건부 렌더링
   const renderButtonContent = () => {
-    if (type === 'kakao' || type === 'google') {
-      const iconClass = `button--${size}__icon`; // 크기에 따른 클래스 설정
-      const Icon = type === 'kakao' ? KakaoIcon : GoogleIcon;
-
-      return (
-        <Icon
-          className={iconClass}
-          width="100%" // width와 height를 '100%'로 설정하여 부모에 맞게 크기 조정
-          height="100%"
-        />
-      );
+    if (type === 'kakao') {
+      return <img src={kakaologin} alt={label} style={{ width: '100%', height: 'auto' }} />;
+    } else if (type === 'google') {
+      return <img src={googlelogin} alt={label} style={{ width: '100%', height: 'auto' }} />;
+    } else {
+      return label;
     }
-    return label;
   };
 
   return (

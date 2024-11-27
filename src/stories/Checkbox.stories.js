@@ -1,31 +1,83 @@
-import React from 'react';
-import Checkbox from './Checkbox';
+import { fn } from '@storybook/test';
+import { Button } from './Button';
 
+// Storybook 기본 설정
 export default {
-  title: 'Components/Checkbox',
-  component: Checkbox,
+  title: 'Components/Button',
+  component: Button,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
   argTypes: {
+    backgroundColor: { control: 'color' },
     type: {
-      control: { type: 'radio' },
-      options: ['square', 'circle'],
+      control: { type: 'select' },
+      options: ['primary', 'secondary', 'kakao','google'],
     },
+    size: {
+      control: { type: 'select' },
+      options: ['small', 'medium', 'large', 'xl'],
+    },
+  },
+  args: { onClick: fn() },
+};
+
+// Primary 버튼 스토리
+export const Primary = {
+  args: {
+    type: 'primary',
+    label: 'BUTTON',
   },
 };
 
-const Template = (args) => <Checkbox {...args} />;
-
-export const Square = Template.bind({});
-Square.args = {
-  label: '전체 동의하기',
-  type: 'square',
+// Secondary 버튼 스토리
+export const Secondary = {
+  args: {
+    type: 'secondary',
+    label: 'BUTTON',
+  },
 };
 
-export const Circle = Template.bind({});
-Circle.args = {
-  label: '전체 동의하기',
-  type: 'circle',
+// Kakao 버튼 스토리
+export const Kakao = {
+  args:{
+    type:'kakao',
+    label:'Kakao',
+    
+  },
+};
+export const Google = {
+  args:{
+    type: 'google',
+    label : 'Google', 
+  },
+};
+// 사이즈별 버튼 스토리
+export const XL = {
+  args: {
+    size: 'xl',
+    label: 'BUTTON',
+  },
+};
+
+export const Large = {
+  args: {
+    size: 'large',
+    label: 'BUTTON',
+  },
+};
+
+export const Medium = {
+  args: {
+    size: 'medium',
+    label: 'BUTTON',
+  },
+};
+
+export const Small = {
+  args: {
+    size: 'small',
+    label: 'BUTTON',
+  },
 };

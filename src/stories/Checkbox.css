@@ -1,73 +1,93 @@
-.checkbox-container {
-    display: flex;
-    align-items: center;
+button {
     cursor: pointer;
-    user-select:none;
+    user-select: none; /* 사용자가 텍스트를 선택할 수 없도록 설정 */
+    outline: none; /* 버튼 클릭 시 외곽선 제거 */
+    -webkit-appearance: none; /* 브라우저 기본 스타일 제거 */
+    -moz-appearance: none; /* 파이어폭스 기본 스타일 제거 */
+    appearance: none; /* 모든 브라우저 기본 스타일 제거 */
   }
   
-
-
-  input[type="checkbox"] {
-    display: none;
+  button:focus {
+    outline: none; /* 포커스 시에도 외곽선 제거 */
   }
   
-  /* 공통 체크박스 스타일 */
-  .checkmark {
-    width: 20px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 8px;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-    position: relative;
-    border: 2px solid #ccc;
+  button::selection {
+    background: none; /* 버튼 텍스트 선택 배경 제거 */
   }
-  .checkmark:focus {
-    outline: none; /* 체크박스 클릭 시 포커스 없애기 */
-  }
-  
-  .checkbox-container:focus-within {
-    outline: none; /* 전체 체크박스 컨테이너 포커스 없애기 */
-  }
-  
-  .checkmark::after {
-    content: '✓';
-    display: none;
-    font-size: 16px;
+  /*버튼에 나타나는 텍스트 입력 효과를 없애기 위해서 추가한 CSS들*/
+  .button--primary {
+    display: inline-block;
+    cursor: pointer;
+    border: 0;
+    border-radius: 3em;
+    font-weight: 700;
+    line-height: 1;
+    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #6888FF;
     color: white;
+    transition: background-color 0.3s ease;
   }
   
-  /* 체크되었을 때의 스타일 */
-  .checkbox-container.checked .checkmark {
-    background-color: #8aff98; /* 체크 시 초록색 */
-    border-color: transparent; /* 테두리 제거 */
-  }
-  
-  .checkbox-container.checked .checkmark::after {
-    display: block;
-  }
-  
-  /* 원형 체크박스 스타일 */
-  .checkbox-container.circle .checkmark {
-    border-radius: 50%;
-  }
-  
-  /* 사각형 체크박스 스타일 */
-  .checkbox-container.square .checkmark {
-    border-radius: 4px;
-  }
-  
-  /* 레이블 텍스트 스타일 */
-  .label-text {
-    font-size: 16px;
-    font-weight: normal;
+  .button--secondary {
+    display: inline-block;
+    cursor: pointer;
+    border: 0;
+    border-radius: 3em;
+    font-weight: 700;
+    line-height: 1;
+    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+    background-color: transparent;
     color: #333;
-    margin-left: 4px;
-    user-select: none;
-    transition: all 0.2s ease;
+    border: 1px solid #6888FF;
+    transition: border 0.3s ease;
   }
-  .label-checked {
-    font-size: 16px; /* 체크되었을 때 폰트 크기 변경 */
-    font-weight: bold; /* 체크되었을 때 폰트 굵기 변경 */
+  
+  .button--small {
+    padding: 13px 24px;
+    font-size: 12px;
   }
+  
+  .button--medium {
+    padding: 14px 26px;
+    font-size: 13px;
+  }
+  
+  .button--large {
+    padding: 18px 31px;
+    font-size: 14px;
+  }
+  
+  .button--xl {
+    padding: 18px 41px;
+    font-size: 15px;
+  }
+  
+  .button--primary:hover {
+    background-color: #CBD5F8;
+  }
+  
+  .button--secondary:hover {
+    border: 1px solid #CBD5F8;
+  }
+  
+  .button--kakao {
+    border: none;
+    padding: 0;
+    border-radius: 8px;
+    cursor:pointer;
+  }
+  .button--kakao:hover{
+    filter:brightness(0.92);
+  }
+  
+  .button--google{
+    border: none;
+    padding: 0;
+    border-radius: 8px;
+    cursor:pointer;
+  }
+  .button--google:hover{
+    filter:brightness(0.92);
+  }
+  
