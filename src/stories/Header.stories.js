@@ -1,29 +1,47 @@
-import { fn } from '@storybook/test';
-
 import { Header } from './Header';
 
 export default {
   title: 'Components/Header',
   component: Header,
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
   parameters: {
-    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
     layout: 'fullscreen',
   },
   args: {
-    onLogin: fn(),
-    onLogout: fn(),
-    onCreateAccount: fn(),
+    onBack: false,
+    onSearch: true,
+    title: 'Turtles🐢',
   },
 };
 
-export const LoggedIn = {
+export const TitleOnly = {
   args: {
-    user: {
-      name: 'Jane Doe',
-    },
+    onBack: false,
+    onSearch: false,
+    title: 'Turtles🐢',
   },
 };
 
-export const LoggedOut = {};
+export const TitleWithBackButton = {
+  args: {
+    onBack: true,
+    onSearch: false,
+    title: 'Turtles🐢',
+  },
+};
+
+export const TitleWithSearchButton = {
+  args: {
+    onBack: false,
+    onSearch: true,
+    title: 'Turtles🐢',
+  },
+};
+
+export const OriginalHeader = {
+  args: {
+    onBack: true,
+    onSearch: true,
+    title: 'Turtles🐢',
+  },
+};
