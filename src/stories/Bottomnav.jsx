@@ -1,56 +1,58 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import "./bottomnav.css";
-import { ReactComponent as ChatIcon } from "./assets/Chat.svg";
-import { ReactComponent as HomeIcon } from "./assets/Home.svg";
-import { ReactComponent as MyPageIcon } from "./assets/MyPage.svg";
 
-const BottomNav = () => {
-  const [active, setActive] = useState("home");
-
-  const getIndicatorPosition = () => {
-    switch (active) {
-      case "home":
-        return "0%";
-      case "chat":
-        return "33.33%";
-      case "mypage":
-        return "66.66%";
-      default:
-        return "0%";
-    }
-  };
+/** Bottom navigation component for user interaction */
+export const BottomNav = ({ buttonnum, label, icon, ...props }) => {
+  const [active, setActive] = useState(0); // active index를 상태로 사용
 
   return (
-    <div className="bottom-nav">
- <div
-  className={`nav-item ${active === "home" ? "active" : ""}`}
-  onClick={() => setActive("home")}
->
-  <HomeIcon className="icon" />
-  <span>홈</span>
-</div>
-<div
-  className={`nav-item ${active === "chat" ? "active" : ""}`}
-  onClick={() => setActive("chat")}
->
-  <ChatIcon className="icon" />
-  <span>채팅</span>
-</div>
-<div
-  className={`nav-item ${active === "mypage" ? "active" : ""}`}
-  onClick={() => setActive("mypage")}
->
-  <MyPageIcon className="icon" />
-  <span>마이페이지</span>
-</div>
+    <div className="bottom-nav" {...props}>
+      {Array.from({ length: buttonnum }, (_, index) => (
+        <div
+          key={`button-${index}`}
+          className={`nav-item ${active === index ? "active" : ""}`}
+          onClick={() => setActive(index)}
+        >
+          {icon[index] ? (
+            React.createElement(icon[index], {
+              color: active === index ? "#000000" : "#AEAEB2", // 색상 전달
+            })
+          ) : (
+            <div className="default-icon" style={{ color: active === index ? "#000000" : "#AEAEB2" }}>
+              🔲
+            </div>
+          )}
+          <span>{label[index] || `Button ${index + 1}`}</span>
+        </div>
+      ))}
       <div
         className="active-indicator"
         style={{
-          left: getIndicatorPosition(),
+          width: `${100 / buttonnum}%`,
+          left: `${(100 / buttonnum) * active}%`,
         }}
       ></div>
     </div>
   );
 };
 
-export default BottomNav;
+BottomNav.propTypes = {
+  /** Number of buttons in the navigation */
+  buttonnum: PropTypes.number.isRequired,
+
+  /** Labels for each button */
+  label: PropTypes.arrayOf(PropTypes.string),
+
+  /** Icons for each button (can be null or a React component) */
+  icon: PropTypes.arrayOf(PropTypes.elementType),
+
+  /** Optional additional props for the container */
+  props: PropTypes.object,
+};
+
+BottomNav.defaultProps = {
+  buttonnum: 3,
+  label: ["Home", "Chat", "Profile"], // 기본 라벨
+  icon: [null, null, null], // 기본 아이콘 (없음)
+};
