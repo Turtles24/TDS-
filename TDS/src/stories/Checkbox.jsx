@@ -1,54 +1,30 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './button.css';
-import kakaologin from './assets/kakaologin.svg';
-import googlelogin from './assets/googlelogin.svg';
+import React, { useState } from 'react';
+import './checkbox.css';
 
-export const Button = ({ type, backgroundColor, size, label, ...props }) => {
-  // 버튼 유형에 따른 클래스 매핑
-  const buttonTypes = {
-    primary: 'button--primary',
-    secondary: 'button--secondary',
-    kakao: 'button--kakao',
-    google: 'button--google',
+const Checkbox = ({ type = 'square' }) => {
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
   };
 
-  const mode = buttonTypes[type] || 'button--primary';
-
-  // 버튼 내용 조건부 렌더링
-  const renderButtonContent = () => {
-    if (type === 'kakao') {
-      return <img src={kakaologin} alt={label} style={{ width: '100%', height: 'auto' }} />;
-    } else if (type === 'google') {
-      return <img src={googlelogin} alt={label} style={{ width: '100%', height: 'auto' }} />;
-    } else {
-      return label;
-    }
-  };
+  // 체크 상태에 따라 클래스 추가
+  const checkboxClass = `checkbox-container ${isChecked ? 'checked' : ''} ${type}`;
 
   return (
-    <button
-      type="button"
-      className={['button', `button--${size}`, mode].join(' ')}
-      style={backgroundColor ? { backgroundColor } : {}}
-      {...props}
-    >
-      {renderButtonContent()}
-    </button>
+    <label className={checkboxClass}>
+      <input
+        type="checkbox"
+        checked={isChecked}
+        onChange={handleCheckboxChange}
+      />
+      <span className="checkmark"></span>
+      {/* 체크 여부에 따라 레이블에 동적 스타일 적용 */}
+      <span className={`label-text ${isChecked ? 'label-checked' : ''}`}>
+        전체 동의하기
+      </span>
+    </label>
   );
 };
 
-Button.propTypes = {
-  type: PropTypes.oneOf(['primary', 'secondary', 'kakao', 'google']),
-  backgroundColor: PropTypes.string,
-  size: PropTypes.oneOf(['small', 'medium', 'large', 'xl']),
-  label: PropTypes.string.isRequired,
-  onClick: PropTypes.func,
-};
-
-Button.defaultProps = {
-  type: 'primary',
-  backgroundColor: null,
-  size: 'medium',
-  onClick: undefined,
-};
+export default Checkbox;
