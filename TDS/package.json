@@ -6,17 +6,18 @@
   "author": "JihuLim <hyperflame05@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@chromatic-com/storybook": "3.2.2",
-    "@storybook/addon-essentials": "8.4.5",
-    "@storybook/addon-interactions": "8.4.5",
-    "@storybook/addon-onboarding": "8.4.5",
+    "@chromatic-com/storybook": "^3.2.2",
+    "@storybook/addon-essentials": "^8.4.5",
+    "@storybook/addon-interactions": "^8.4.5",
+    "@storybook/addon-links": "^8.4.5",
+    "@storybook/addon-onboarding": "^8.4.5",
     "@storybook/addon-webpack5-compiler-swc": "1.0.5",
-    "@storybook/blocks": "8.4.5",
-    "@storybook/react": "8.4.5",
-    "@storybook/react-webpack5": "8.4.5",
-    "@storybook/test": "8.4.5",
+    "@storybook/blocks": "^8.4.5",
+    "@storybook/react": "^8.4.5",
+    "@storybook/react-webpack5": "^8.4.5",
+    "@storybook/test": "^8.4.5",
     "prop-types": "15.8.1",
-    "storybook": "8.4.5"
+    "storybook": "^8.4.5"
   },
   "scripts": {
     "storybook": "storybook dev -p 6006",
